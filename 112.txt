@@ -1,0 +1,84 @@
+# Git教程（window版）
+
+学习来源廖雪峰的官方网站：https://www.liaoxuefeng.com/wiki/896043488029600/897013573512192
+
+## 1.安装git
+
+（1）直接从[官网](https://git-scm.com/downloads)上选择需要的版本下载，选择默认安装。
+
+（2）查看是否安装成功
+
+​		1）可以选择直接在cmd中输入`git --version`查看git版本，前提是将git路径放入了环境变量path中。
+
+![img](file:///C:\Users\17958\AppData\Roaming\Tencent\Users\1795865388\TIM\WinTemp\RichOle\9EWHGE3C2I$YN5M`T`3F~QJ.png)
+
+​		2）在桌面`开始`处找到`git->git bash`、`git->git cmd`、`git->GUI`打开,打开成功即安装成功。GUI是可视化图形界面，加上CMD和Bash是git三个打开的方式。
+
+`Git中的Bash是基于CMD的，在CMD的基础上增添一些新的命令与功能`。所以建议在使用的时候，用Bash更加方便。
+
+![image-20211212215706367](C:\Users\17958\AppData\Roaming\Typora\typora-user-images\image-20211212215706367.png)
+
+## 2.配置你的用户名和邮箱
+
+```java
+$ git config --global user.name "Your Name"
+$ git config --global user.email "email@example.com"
+```
+
+## 3.创建你的版本库
+
+（1）在这里选择用`git->git bash`打开git
+
+（2）进入一个空的文件夹（不空也可以）
+
+（3）使用`git init`命令把这个目录变成Git可以管理的仓库
+
+（4）可以往文件夹中添加一个txt文件
+
+（5）使用`git add`告诉Git，`把文件添加到仓库`,一次只能添加`一个`文件
+
+```java
+形如:
+git add wenjian.txt
+```
+
+（6）使用`git commit`告诉Git，把文件提交到仓库，一次可以提交`多个`文件
+
+## 小知识
+
+`cd 目录路径`进入一个特定的目录
+
+`cd ..`返回上一级目录，cd和.之间有一个空格
+
+`；pwd`查看当前目录
+
+每次修改，如果不用`git add`到暂存区，那就不会加入到`commit`中
+
+## 4.版本回退
+
+- `HEAD`指向的版本就是当前版本，因此，Git允许我们在版本的历史之间穿梭，使用命令`git reset --hard commit_id`。
+- 穿梭前，用`git log`可以查看提交历史，以便确定要回退到哪个版本。
+- 要重返未来，用`git reflog`查看命令历史，以便确定要回到未来的哪个版本。
+
+## 5.工作区和暂存区
+
+工作区 `可见`：就是你在电脑里能看到的目录，
+
+版本库 `不可见`：工作区有一个`隐藏目录 .git`，这个不算工作区，而是Git的版本库。
+
+Git的版本库里存了很多东西，其中最重要的就是称为stage（或者叫index）的暂存区，还有Git为我们自动创建的第一个分支`master`，以及指向`master`的一个指针叫`HEAD`。
+
+
+
+![image-20220117163846904](C:\Users\17958\AppData\Roaming\Typora\typora-user-images\image-20220117163846904.png)
+
+
+
+
+
+![image-20220117163908891](C:\Users\17958\AppData\Roaming\Typora\typora-user-images\image-20220117163908891.png)
+
+```
+git remote add origin git@github.com:Bernie-1-SHI/learngit.git
+```
+
